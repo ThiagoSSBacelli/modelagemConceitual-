@@ -3,9 +3,18 @@ package com.thiagosilva.cursospring.dominio;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+
+@Entity //responsável por identificar que a Classe (CategoriaDominio) é uma entidade JPA   
 public class CategoriaDominio implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)//Comando responsável por gerar os Ids automáticos dentro do meu banco de dados (Chave Primaria)
 	private Integer id;
 	private String nome;
 
